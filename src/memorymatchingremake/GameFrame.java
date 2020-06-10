@@ -64,9 +64,12 @@ public class GameFrame extends JFrame {
         
         ButtonHandler bh = new ButtonHandler();
         
+        
          
         //initialize();
         initComponents();
+        jButton1.setVisible(false);
+        
         game[0] = b1;
         game[1] = b2;
         game[2] = b3;
@@ -89,22 +92,6 @@ public class GameFrame extends JFrame {
             game[i].addActionListener(bh);
         }
         Collections.shuffle(map);
-    }
-    
-    private void initialize(){
-        cont = getContentPane();
-        cont.setLayout(new GridLayout(4, 4));
-        for(int i = 0; i < 16; i++){
-            map.add(i);
-            game[i] = new JButton();
-            cont.add(game[i]);
-            //game[i].addActionListener(bh);
-        }
-        Collections.shuffle(map);
-        
-        this.setLocationRelativeTo(cont);
-        setSize(350, 350);
-        setVisible(true);   
     }
 
     /**
@@ -388,6 +375,7 @@ public class GameFrame extends JFrame {
     
     private void checkWin(){
         if(pairs == 8){
+            jButton1.setVisible(true);
             long time = Duration.between(start, Instant.now()).toSeconds();
             JOptionPane.showMessageDialog(null, "Game over. You made " + fails + " mistakes and took " + time + " seconds");
         }     
@@ -417,7 +405,6 @@ public class GameFrame extends JFrame {
             }
             else{
                 assignPicture(ind, map.get(ind));
-                System.out.println("Prev: " + prevClick + "  Cur: " + ind);
                 if(map.get(prevClick) + map.get(ind) == 15){
                     pairs++;
                     JOptionPane.showMessageDialog(null, "Match made");
