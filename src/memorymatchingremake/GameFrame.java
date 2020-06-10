@@ -5,16 +5,50 @@
  */
 package memorymatchingremake;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import javax.swing.*;
+
 /**
  *
  * @author Vatsav
  */
-public class GameFrame extends javax.swing.JFrame {
+public class GameFrame extends JFrame {
+    private JButton[] game = new JButton[16];
+    private List<Integer> map = new ArrayList<Integer>(16);
+    private Container cont;
+    
+    Icon burger = new ImageIcon("pictures\\burger.png");
+    Icon flash = new ImageIcon("pictures\\flash.png");
+    Icon fries = new ImageIcon("pictures\\fries.png");
+    Icon marvel = new ImageIcon("pictures\\marvel.png");
+    Icon cd = new ImageIcon("pictures\\cd.png");
+    Icon starbucks = new ImageIcon("pictures\\starbucks.png");
+    Icon pizza = new ImageIcon("pictures\\pizza.png");
+    Icon icecream = new ImageIcon("pictures\\icecream.png");
 
     /**
      * Creates new form GameFrame
      */
     public GameFrame() {
+        super("Memory Matching");
+        cont = getContentPane();
+        cont.setLayout(new GridLayout(4, 4));
+        ButtonHandler bh = new ButtonHandler();
+        for(int i = 0; i < 16; i++){
+            map.add(i);
+            game[i] = new JButton();
+            cont.add(game[i]);
+            game[i].setIcon(burger);
+            game[i].addActionListener(bh);
+        }
+        Collections.shuffle(map);
+        setSize(350, 350);
+        setVisible(true);        
         initComponents();
     }
 
@@ -33,11 +67,11 @@ public class GameFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 358, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 322, Short.MAX_VALUE)
         );
 
         pack();
@@ -76,6 +110,20 @@ public class GameFrame extends javax.swing.JFrame {
                 new GameFrame().setVisible(true);
             }
         });
+    }
+    
+    private class ButtonHandler implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Object o = e.getSource();
+            int ind = 0;
+            for(int i = 0; i < 16; i++){
+                if(o == game[i])
+                    ind = i;
+            }
+            System.out.println(map.get(ind));
+        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
