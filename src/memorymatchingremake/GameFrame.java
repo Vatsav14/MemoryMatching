@@ -21,6 +21,10 @@ public class GameFrame extends JFrame {
     private JButton[] game = new JButton[16];
     private List<Integer> map = new ArrayList<Integer>(16);
     private Container cont;
+    private int clickNo = 1;
+    private int prevClick = 0;
+    private int fails = 0;
+    private int pairs = 0;
     
     Icon burger = new ImageIcon("pictures\\burger.png");
     Icon flash = new ImageIcon("pictures\\flash.png");
@@ -43,10 +47,11 @@ public class GameFrame extends JFrame {
             map.add(i);
             game[i] = new JButton();
             cont.add(game[i]);
-            game[i].setIcon(burger);
             game[i].addActionListener(bh);
         }
         Collections.shuffle(map);
+//        for(int i = 0; i < 16; i++)
+//            assignPicture(i, map.get(i));
         setSize(350, 350);
         setVisible(true);        
         initComponents();
@@ -112,6 +117,85 @@ public class GameFrame extends JFrame {
         });
     }
     
+    private void assignPicture(int bn, int i){
+        switch(i){
+            case 0:
+            case 15: game[bn].setIcon(burger);
+                break;
+                
+            case 1: 
+            case 14: game[bn].setIcon(pizza);
+                break;
+                
+            case 2:
+            case 13: game[bn].setIcon(cd);
+                break;
+                
+            case 3:
+            case 12: game[bn].setIcon(flash);
+                break;
+                
+            case 4:
+            case 11: game[bn].setIcon(fries);
+                break;
+                
+            case 5:
+            case 10: game[bn].setIcon(icecream);
+                break;
+                
+            case 6:
+            case 9: game[bn].setIcon(marvel);
+                break;
+                
+            case 7:
+            case 8: game[bn].setIcon(starbucks);
+                break;
+        }
+    }
+    
+    private void assignDisabledPicture(int bn, int i){
+        switch(i){
+            case 0:
+            case 15: game[bn].setDisabledIcon(burger);
+                break;
+                
+            case 1: 
+            case 14: game[bn].setDisabledIcon(pizza);
+                break;
+                
+            case 2:
+            case 13: game[bn].setDisabledIcon(cd);
+                break;
+                
+            case 3:
+            case 12: game[bn].setDisabledIcon(flash);
+                break;
+                
+            case 4:
+            case 11: game[bn].setDisabledIcon(fries);
+                break;
+                
+            case 5:
+            case 10: game[bn].setDisabledIcon(icecream);
+                break;
+                
+            case 6:
+            case 9: game[bn].setDisabledIcon(marvel);
+                break;
+                
+            case 7:
+            case 8: game[bn].setDisabledIcon(starbucks);
+                break;
+        }
+    }
+    
+    private void checkWin(){
+        if(pairs == 8)
+            JOptionPane.showMessageDialog(null, "Game over. You made " + fails + " mistakes");
+    }
+    
+    
+    
     private class ButtonHandler implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -121,7 +205,36 @@ public class GameFrame extends JFrame {
                 if(o == game[i])
                     ind = i;
             }
-            System.out.println(map.get(ind));
+            if(clickNo == 1){
+                assignPicture(ind, map.get(ind));
+                assignDisabledPicture(ind, map.get(ind));
+                game[ind].setEnabled(false);
+                System.out.println(map.get(ind));
+                prevClick = ind;
+                clickNo = 2;
+            }
+            else{
+                assignPicture(ind, map.get(ind));
+                System.out.println("Prev: " + prevClick + "  Cur: " + ind);
+                if(map.get(prevClick) + map.get(ind) == 15){
+                    pairs++;
+                    JOptionPane.showMessageDialog(null, "Match made");
+                    game[prevClick].setDisabledIcon(null);
+                    game[ind].setDisabledIcon(null);
+                    game[ind].setEnabled(false);
+                    checkWin();
+                }
+                else{
+                    fails++;
+                    JOptionPane.showMessageDialog(null, "Mismatch");
+                    game[prevClick].setEnabled(true);
+                    game[ind].setEnabled(true);
+                    game[prevClick].setIcon(null);
+                    game[ind].setIcon(null);
+                }
+                
+                clickNo = 1;
+            }
         }
         
     }
