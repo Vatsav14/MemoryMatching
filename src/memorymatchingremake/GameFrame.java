@@ -8,6 +8,8 @@ package memorymatchingremake;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,28 +20,48 @@ import javax.swing.*;
  * @author Vatsav
  */
 public class GameFrame extends JFrame {
-    private JButton[] game = new JButton[16];
-    private List<Integer> map = new ArrayList<Integer>(16);
+    private JButton[] game;
+    private List<Integer> map;
     private Container cont;
-    private int clickNo = 1;
-    private int prevClick = 0;
-    private int fails = 0;
-    private int pairs = 0;
+    private int clickNo;
+    private int prevClick;
+    private int fails;
+    private int pairs;
+    private boolean firstClick;
+    Instant start;
     
-    Icon burger = new ImageIcon("pictures\\burger.png");
-    Icon flash = new ImageIcon("pictures\\flash.png");
-    Icon fries = new ImageIcon("pictures\\fries.png");
-    Icon marvel = new ImageIcon("pictures\\marvel.png");
-    Icon cd = new ImageIcon("pictures\\cd.png");
-    Icon starbucks = new ImageIcon("pictures\\starbucks.png");
-    Icon pizza = new ImageIcon("pictures\\pizza.png");
-    Icon icecream = new ImageIcon("pictures\\icecream.png");
+    Icon burger;
+    Icon flash;
+    Icon fries;
+    Icon marvel;
+    Icon cd;
+    Icon starbucks;
+    Icon pizza;
+    Icon icecream;
 
     /**
      * Creates new form GameFrame
      */
     public GameFrame() {
         super("Memory Matching");
+        
+        burger = new ImageIcon("pictures\\burger.png");
+        flash = new ImageIcon("pictures\\flash.png");
+        fries = new ImageIcon("pictures\\fries.png");
+        marvel = new ImageIcon("pictures\\marvel.png");
+        cd = new ImageIcon("pictures\\cd.png");
+        starbucks = new ImageIcon("pictures\\starbucks.png");
+        pizza = new ImageIcon("pictures\\pizza.png");
+        icecream = new ImageIcon("pictures\\icecream.png");
+        
+        game = new JButton[16];
+        map = new ArrayList<Integer>(16);
+        clickNo = 1;
+        prevClick = 0;
+        fails = 0;
+        pairs = 0;
+        firstClick = true;
+        
         cont = getContentPane();
         cont.setLayout(new GridLayout(4, 4));
         ButtonHandler bh = new ButtonHandler();
@@ -190,10 +212,11 @@ public class GameFrame extends JFrame {
     }
     
     private void checkWin(){
-        if(pairs == 8)
-            JOptionPane.showMessageDialog(null, "Game over. You made " + fails + " mistakes");
+        if(pairs == 8){
+            long time = Duration.between(start, Instant.now()).toSeconds();
+            JOptionPane.showMessageDialog(null, "Game over. You made " + fails + " mistakes and took " + time + " seconds");
+        }     
     }
-    
     
     
     private class ButtonHandler implements ActionListener{
@@ -204,6 +227,10 @@ public class GameFrame extends JFrame {
             for(int i = 0; i < 16; i++){
                 if(o == game[i])
                     ind = i;
+            }
+            if(firstClick){
+                start = Instant.now();
+                firstClick = false;
             }
             if(clickNo == 1){
                 assignPicture(ind, map.get(ind));
