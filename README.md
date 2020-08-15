@@ -28,3 +28,9 @@ The animation below shows what happens when the player matches 2 similar tiles. 
 The animation below shows what happens when the player manages to match all 8 pairs in the grid. A final dialogue box pops up showing how many failed attempts the player had and the time they took to match all the pairs
 
 ![Memory Game Game Over Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-GameOver.gif)
+
+## Restarting the game if you want to play again
+
+When the player completes the game, an button appears above the Help button asks whether the player wants to Start Over.
+
+![Memory Game Start Over Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-Restart.gif)
