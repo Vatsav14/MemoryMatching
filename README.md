@@ -31,6 +31,6 @@ The animation below shows what happens when the player manages to match all 8 pa
 
 ## Restarting the game if you want to play again
 
-When the player completes the game, an button appears above the Help button asks whether the player wants to Start Over.
+When the player completes the game, an button appears above the Help button asks whether the player wants to Start Over. As you can see in the following animation, the positions of the tiles are randomized every time the game starts to reduce repetitiveness. 
 
 ![Memory Game Start Over Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-Restart.gif)
