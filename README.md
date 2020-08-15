@@ -1,5 +1,5 @@
 # MemoryMatching
-Since I lost the code for the original Memory Matching game that I made 2 years ago as a group, I decided to remake the game using the concepts I learnt ever since then as a throwback to simpler times. Surprisingly enough, I was able to condense all the code for the game mechanics into about 50 to 75 lines. 
+Since I lost the files for the original Memory Matching game that I made 2 years ago in a group, I decided to remake the game using the concepts I learnt ever since then as a throwback to simpler times. Surprisingly enough, I was able to condense all the code for the game mechanics into about 50 to 75 lines. 
 
 NOTE: This version has no database connectivity since I felt it was quite pointless to implement it in a nostalgia piece. I might add it in at a later date since it's just 10 - 15 lines of code, apart from creating the database again using MySQL.
 
@@ -41,4 +41,4 @@ Although almost no one clicks this button, the animation below shows what happen
 
 ![Memory Game Help Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-help.gif)
 
-Final Note: For anyone wondering why the game looks like this, note that I tried to replicate the original version that we had made over 2 years ago. Even the images that I chose are as close I could get to the original pictures. For anyone who wants to see the old version and/or how inefficient our old code was, I have a link to the project pdf we had created for the project [here.](https://drive.google.com/file/d/1xTzwepKpbxSwDju6FqbFMbQ9uI2Cnkx9/view?usp=sharing)
+* Final Note: For anyone wondering why the game looks like this, note that I tried to replicate the original version that we had made over 2 years ago. Even the images that I chose are as close I could get to the original pictures. For anyone who wants to see the old version and/or how inefficient our old code was, I have a link to the project pdf we had created for the project [here.](https://drive.google.com/file/d/1xTzwepKpbxSwDju6FqbFMbQ9uI2Cnkx9/view?usp=sharing)
