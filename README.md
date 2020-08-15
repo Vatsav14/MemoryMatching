@@ -22,3 +22,9 @@ The animation below shows what happens when the player is unable to match 2 simi
 The animation below shows what happens when the player matches 2 similar tiles. A dialogue box pops up, saying that the tiles chosen were a valid pair. This matched pair now turns gray, disabling them, signifying you can't click them again.
 
 ![Memory Game Match Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-Match.gif)
+
+## What happens when you match all the possible pairs
+
+The animation below shows what happens when the player manages to match all 8 pairs in the grid. A final dialogue box pops up showing how many failed attempts the player had and the time they took to match all the pairs
+
+![Memory Game Game Over Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-GameOver.gif)
