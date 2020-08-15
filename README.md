@@ -41,5 +41,4 @@ Although almost no one clicks this button, the animation below shows what happen
 
 ![Memory Game Help Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-help.gif)
 
-##### Final Note
-For anyone wondering why the game looks like this, note that I tried to replicate the original version that we had made over 2 years ago. Even the images that I chose are as close I could get to the original pictures. For anyone who wants to see the old version and/or how inefficient our old code was, I have a link to the project pdf we had created for the project [here](https://drive.google.com/file/d/1xTzwepKpbxSwDju6FqbFMbQ9uI2Cnkx9/view?usp=sharing)
+Final Note: For anyone wondering why the game looks like this, note that I tried to replicate the original version that we had made over 2 years ago. Even the images that I chose are as close I could get to the original pictures. For anyone who wants to see the old version and/or how inefficient our old code was, I have a link to the project pdf we had created for the project [here.](https://drive.google.com/file/d/1xTzwepKpbxSwDju6FqbFMbQ9uI2Cnkx9/view?usp=sharing)
