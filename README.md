@@ -21,24 +21,24 @@ The animation below shows what happens when the player is unable to match 2 simi
 
 The animation below shows what happens when the player matches 2 similar tiles. A dialogue box pops up, saying that the tiles chosen were a valid pair. This matched pair now turns gray, disabling them, signifying you can't click them again.
 
-![Memory Game Match Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-Match.gif)
+![Memory Game Match Demo](demo/MM-Match.gif)
 
 ### What happens when you match all the possible pairs
 
 The animation below shows what happens when the player manages to match all 8 pairs in the grid. A final dialogue box pops up showing how many failed attempts the player had and the time they took to match all the pairs
 
-![Memory Game Game Over Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-GameOver.gif)
+![Memory Game Game Over Demo](demo/MM-GameOver.gif)
 
 ### Restarting the game if you want to play again
 
 When the player completes the game, an button appears above the Help button asks whether the player wants to Start Over. As you can see in the following animation, the positions of the tiles are randomized every time the game starts to reduce repetitiveness. 
 
-![Memory Game Start Over Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-Restart.gif)
+![Memory Game Start Over Demo](demo/MM-Restart.gif)
 
 ### The Help button
 
 Although almost no one would probably click this button, the animation below shows what happens when it is clicked. 
 
-![Memory Game Help Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-help.gif)
+![Memory Game Help Demo](demo/MM-help.gif)
 
 * Final Note: For anyone wondering why the game looks like this, note that I tried to replicate the original version that we had made over 2 years ago. Even the images that I chose are as close I could get to the original pictures. For anyone who wants to see the old version and/or how inefficient our old code was, I have a link to the project pdf we had created for the project [here.](https://drive.google.com/file/d/1xTzwepKpbxSwDju6FqbFMbQ9uI2Cnkx9/view?usp=sharing)
