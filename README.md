@@ -15,7 +15,7 @@ Below are a few sample animations of what the game looks like and the various sc
 
 The animation below shows what happens when the player is unable to match 2 similar tiles. A dialogue box pops up, saying that the tiles chosen did not have the same image, and 1 failed attempt is added on to your total attemps.
 
-![Memory Game Mismatch Demo](https://github.com/Vatsav14/Project-Pictures/blob/master/Memory/MM-Mismatch.gif)
+![Memory Game Mismatch Demo](demo/MM-Mismatch.gif)
 
 ### What happens when you get 2 matching tiles
 
