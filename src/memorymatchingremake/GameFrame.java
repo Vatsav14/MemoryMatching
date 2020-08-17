@@ -8,6 +8,7 @@ package memorymatchingremake;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -376,8 +377,8 @@ public class GameFrame extends JFrame {
     private void checkWin(){
         if(pairs == 8){
             jButton1.setVisible(true);
-            long time = Duration.between(start, Instant.now()).toSeconds();
-            JOptionPane.showMessageDialog(null, "Game over. You made " + fails + " mistakes and took " + time + " seconds");
+            Duration time = Duration.between(start, Instant.now());
+            JOptionPane.showMessageDialog(null, "Game over. You made " + fails + " mistakes and took " + time.getSeconds() + " seconds");
         }     
     }
     
@@ -399,7 +400,6 @@ public class GameFrame extends JFrame {
                 assignPicture(ind, map.get(ind));
                 assignDisabledPicture(ind, map.get(ind));
                 game[ind].setEnabled(false);
-                System.out.println(map.get(ind));
                 prevClick = ind;
                 clickNo = 2;
             }
